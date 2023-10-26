@@ -1,46 +1,52 @@
 package prog;
 
-public class Akun {
+abstract public class Akun {
 	
 	private String namaPemilik; 
 	private String nomorAkun; 
 	private int saldo; 
 	
-	public Akun(String namaPemilik, String nomorAkun, int saldo) {
+	protected Akun(String namaPemilik, String nomorAkun, int saldo) {
 		this.namaPemilik = namaPemilik;
 		this.nomorAkun = nomorAkun;
 		this.saldo = saldo;
 	}
+	
+	protected boolean validateName() {
+		if (this.getNamaPemilik().length() == 3) return false; 
+		
+		return true; 
+	}
 
-	public void setor(int i) {
+	protected void setor(int i) {
 		this.setSaldo(this.getSaldo() + i); 
 	}
 	
-	public void tarik(int i) {
+	protected void tarik(int i) {
 		this.setSaldo(this.getSaldo() - i);
 	}
 
-	public String getNamaPemilik() {
+	protected String getNamaPemilik() {
 		return namaPemilik;
 	}
 
-	public void setNamaPemilik(String namaPemilik) {
+	protected void setNamaPemilik(String namaPemilik) {
 		this.namaPemilik = namaPemilik;
 	}
 
-	public String getNomorAkun() {
+	protected String getNomorAkun() {
 		return nomorAkun;
 	}
 
-	public void setNomorAkun(String nomorAkun) {
+	protected void setNomorAkun(String nomorAkun) {
 		this.nomorAkun = nomorAkun;
 	}
 
-	public int getSaldo() {
+	protected int getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(int saldo) {
+	protected void setSaldo(int saldo) {
 		this.saldo = saldo;
 	}
 
